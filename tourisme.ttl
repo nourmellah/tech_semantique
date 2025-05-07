@@ -1,0 +1,446 @@
+@prefix : <http://example.org/tourisme#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://example.org/tourisme#> .
+
+[ rdf:type owl:Ontology ;
+   owl:imports <file:/C:/Users/mella/Desktop/projet%20sem/tourisme_ins.ttl>
+ ] .
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://example.org/tourisme#hasAccommodation
+:hasAccommodation rdf:type owl:ObjectProperty ;
+                  owl:inverseOf :isAccommodationOf ;
+                  rdfs:domain :Touriste ;
+                  rdfs:range :Hebergement .
+
+
+###  http://example.org/tourisme#hasActivity
+:hasActivity rdf:type owl:ObjectProperty ;
+             rdfs:domain :Service ;
+             rdfs:range :Activite .
+
+
+###  http://example.org/tourisme#hasDestination
+:hasDestination rdf:type owl:ObjectProperty ;
+                rdfs:domain :Service ;
+                rdfs:range :Destination .
+
+
+###  http://example.org/tourisme#hasParticipant
+:hasParticipant rdf:type owl:ObjectProperty ;
+                owl:inverseOf :participatesInActivity .
+
+
+###  http://example.org/tourisme#hasTransportation
+:hasTransportation rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Service ;
+                   rdfs:range :Transport .
+
+
+###  http://example.org/tourisme#isAccommodationOf
+:isAccommodationOf rdf:type owl:ObjectProperty .
+
+
+###  http://example.org/tourisme#isManagedBy
+:isManagedBy rdf:type owl:ObjectProperty ;
+             owl:inverseOf :managesTour .
+
+
+###  http://example.org/tourisme#isOfferedBy
+:isOfferedBy rdf:type owl:ObjectProperty ;
+             owl:inverseOf :offersService .
+
+
+###  http://example.org/tourisme#isOrganizedBy
+:isOrganizedBy rdf:type owl:ObjectProperty ;
+               owl:inverseOf :organizesEvent .
+
+
+###  http://example.org/tourisme#locatedIn
+:locatedIn rdf:type owl:ObjectProperty ,
+                    owl:TransitiveProperty ;
+           rdfs:domain :Destination ;
+           rdfs:range :Destination .
+
+
+###  http://example.org/tourisme#managesTour
+:managesTour rdf:type owl:ObjectProperty ;
+             rdfs:domain :GuideTouristique ;
+             rdfs:range :Activite .
+
+
+###  http://example.org/tourisme#offersService
+:offersService rdf:type owl:ObjectProperty ;
+               rdfs:domain :OperateurTouristique ;
+               rdfs:range :Service .
+
+
+###  http://example.org/tourisme#organizesEvent
+:organizesEvent rdf:type owl:ObjectProperty ;
+                rdfs:domain :Organisation ;
+                rdfs:range :Evenement .
+
+
+###  http://example.org/tourisme#participatesInActivity
+:participatesInActivity rdf:type owl:ObjectProperty ;
+                        rdfs:domain :Touriste ;
+                        rdfs:range :Activite .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://example.org/tourisme#capacity
+:capacity rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Evenement ;
+          rdfs:range xsd:integer .
+
+
+###  http://example.org/tourisme#email
+:email rdf:type owl:DatatypeProperty ,
+                owl:FunctionalProperty ;
+       rdfs:domain :Agent ;
+       rdfs:range xsd:string .
+
+
+###  http://example.org/tourisme#endDate
+:endDate rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Evenement ;
+         rdfs:range xsd:date .
+
+
+###  http://example.org/tourisme#hasDescription
+:hasDescription rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Tourisme ;
+                rdfs:range xsd:string .
+
+
+###  http://example.org/tourisme#hasName
+:hasName rdf:type owl:DatatypeProperty ,
+                  owl:FunctionalProperty ;
+         rdfs:domain :Tourisme ;
+         rdfs:range xsd:string .
+
+
+###  http://example.org/tourisme#hasPrice
+:hasPrice rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain :Service ;
+          rdfs:range xsd:decimal .
+
+
+###  http://example.org/tourisme#hasRating
+:hasRating rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain :Service ;
+           rdfs:range xsd:decimal .
+
+
+###  http://example.org/tourisme#startDate
+:startDate rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Evenement ;
+           rdfs:range xsd:date .
+
+
+###  http://example.org/tourisme#telephone
+:telephone rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain :Agent ;
+           rdfs:range xsd:string .
+
+
+###  http://example.org/tourisme#website
+:website rdf:type owl:DatatypeProperty ,
+                  owl:FunctionalProperty ;
+         rdfs:domain :Agent ;
+         rdfs:range xsd:string .
+
+
+###  http://xmlns.com/foaf/0.1/name
+<http://xmlns.com/foaf/0.1/name> rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://example.org/tourisme#Activite
+:Activite rdf:type owl:Class ;
+          rdfs:subClassOf :Service ;
+          rdfs:comment "Activité proposée aux touristes."@fr ;
+          rdfs:label "Activité"@fr .
+
+
+###  http://example.org/tourisme#AgenceDeVoyage
+:AgenceDeVoyage rdf:type owl:Class ;
+                rdfs:subClassOf :Organisation .
+
+
+###  http://example.org/tourisme#Agent
+:Agent rdf:type owl:Class ;
+       rdfs:subClassOf :Tourisme ;
+       owl:hasKey ( <http://xmlns.com/foaf/0.1/name>
+                  ) ;
+       rdfs:comment "Acteur participant ou organisant le tourisme."@fr ;
+       rdfs:label "Agent"@fr .
+
+
+###  http://example.org/tourisme#AubergeDeJeunesse
+:AubergeDeJeunesse rdf:type owl:Class ;
+                   rdfs:subClassOf :Hebergement .
+
+
+###  http://example.org/tourisme#Aventure
+:Aventure rdf:type owl:Class ;
+          rdfs:subClassOf :Activite .
+
+
+###  http://example.org/tourisme#ChaineHoteliere
+:ChaineHoteliere rdf:type owl:Class ;
+                 rdfs:subClassOf :Organisation .
+
+
+###  http://example.org/tourisme#Conference
+:Conference rdf:type owl:Class ;
+            rdfs:subClassOf :Evenement .
+
+
+###  http://example.org/tourisme#Culturelle
+:Culturelle rdf:type owl:Class ;
+            rdfs:subClassOf :Activite .
+
+
+###  http://example.org/tourisme#Destination
+:Destination rdf:type owl:Class ;
+             rdfs:subClassOf :Tourisme ;
+             owl:hasKey ( :hasName
+                        ) ;
+             rdfs:comment "Lieu visité ou desservi par un service touristique."@fr ;
+             rdfs:label "Destination"@fr .
+
+
+###  http://example.org/tourisme#Evenement
+:Evenement rdf:type owl:Class ;
+           rdfs:subClassOf :Service ;
+           rdfs:comment "Événement organisé comme service touristique."@fr ;
+           rdfs:label "Événement"@fr .
+
+
+###  http://example.org/tourisme#Exposition
+:Exposition rdf:type owl:Class ;
+            rdfs:subClassOf :Evenement .
+
+
+###  http://example.org/tourisme#Festival
+:Festival rdf:type owl:Class ;
+          rdfs:subClassOf :Evenement .
+
+
+###  http://example.org/tourisme#ForfaitTouristique
+:ForfaitTouristique rdf:type owl:Class ;
+                    rdfs:subClassOf :Service ;
+                    rdfs:comment "Ensemble de services vendus comme un seul produit."@fr ;
+                    rdfs:label "Forfait touristique"@fr .
+
+
+###  http://example.org/tourisme#GuideTouristique
+:GuideTouristique rdf:type owl:Class ;
+                  rdfs:subClassOf :Agent ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :managesTour ;
+                                    owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                  ] ;
+                  owl:disjointWith :Touriste ;
+                  rdfs:comment "Personne guidant les touristes."@fr ;
+                  rdfs:label "Guide touristique"@fr .
+
+
+###  http://example.org/tourisme#Hebergement
+:Hebergement rdf:type owl:Class ;
+             rdfs:subClassOf :Service ;
+             rdfs:comment "Logement proposé aux touristes."@fr ;
+             rdfs:label "Hébergement"@fr .
+
+
+###  http://example.org/tourisme#Hotel
+:Hotel rdf:type owl:Class ;
+       rdfs:subClassOf :Hebergement .
+
+
+###  http://example.org/tourisme#Loisir
+:Loisir rdf:type owl:Class ;
+        rdfs:subClassOf :Activite .
+
+
+###  http://example.org/tourisme#MaisonDHotes
+:MaisonDHotes rdf:type owl:Class ;
+              rdfs:subClassOf :Hebergement .
+
+
+###  http://example.org/tourisme#OperateurTouristique
+:OperateurTouristique rdf:type owl:Class ;
+                      rdfs:subClassOf :Organisation .
+
+
+###  http://example.org/tourisme#Organisation
+:Organisation rdf:type owl:Class ;
+              rdfs:subClassOf :Agent ;
+              rdfs:comment "Entité fournissant des services touristiques."@fr ;
+              rdfs:label "Organisation"@fr .
+
+
+###  http://example.org/tourisme#Pays
+:Pays rdf:type owl:Class ;
+      rdfs:subClassOf :Destination ;
+      rdfs:comment "Entité géopolitique de plus grande échelle."@fr ;
+      rdfs:label "Pays"@fr .
+
+
+###  http://example.org/tourisme#Region
+:Region rdf:type owl:Class ;
+        rdfs:subClassOf :Destination ;
+        rdfs:comment "Division administrative d'un pays."@fr ;
+        rdfs:label "Région"@fr .
+
+
+###  http://example.org/tourisme#Service
+:Service rdf:type owl:Class ;
+         rdfs:subClassOf :Tourisme ;
+         owl:hasKey ( :hasName
+                    ) ;
+         rdfs:comment "Tout service touristique (activité, hébergement, transport)."@fr ;
+         rdfs:label "Service"@fr .
+
+
+###  http://example.org/tourisme#Tourisme
+:Tourisme rdf:type owl:Class ;
+          rdfs:comment "Domaine général du tourisme."@fr ;
+          rdfs:label "Tourisme"@fr .
+
+
+###  http://example.org/tourisme#Touriste
+:Touriste rdf:type owl:Class ;
+          rdfs:subClassOf :Agent ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :participatesInActivity ;
+                            owl:minCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasAccommodation ;
+                            owl:cardinality "1"^^xsd:nonNegativeInteger
+                          ] ;
+          rdfs:comment "Personne voyageant pour le tourisme."@fr ;
+          rdfs:label "Touriste"@fr .
+
+
+###  http://example.org/tourisme#Transport
+:Transport rdf:type owl:Class ;
+           rdfs:subClassOf :Service ;
+           rdfs:comment "Service de déplacement pour touristes."@fr ;
+           rdfs:label "Transport"@fr .
+
+
+###  http://example.org/tourisme#TransportAerien
+:TransportAerien rdf:type owl:Class ;
+                 rdfs:subClassOf :Transport .
+
+
+###  http://example.org/tourisme#TransportFerroviaire
+:TransportFerroviaire rdf:type owl:Class ;
+                      rdfs:subClassOf :Transport .
+
+
+###  http://example.org/tourisme#TransportRoutier
+:TransportRoutier rdf:type owl:Class ;
+                  rdfs:subClassOf :Transport .
+
+
+###  http://example.org/tourisme#Ville
+:Ville rdf:type owl:Class ;
+       rdfs:subClassOf :Destination ;
+       rdfs:comment "Zone urbaine desservie par les services touristiques."@fr ;
+       rdfs:label "Ville"@fr .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://example.org/tourisme#AccorHotels
+:AccorHotels rdf:type :ChaineHoteliere .
+
+
+###  http://example.org/tourisme#Viator
+:Viator rdf:type :ChaineHoteliere .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Activite
+                :ForfaitTouristique
+                :Hebergement
+                :Transport
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :AgenceDeVoyage
+                :ChaineHoteliere
+                :OperateurTouristique
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :AubergeDeJeunesse
+                :Hotel
+                :MaisonDHotes
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Aventure
+                :Culturelle
+                :Loisir
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Conference
+                :Exposition
+                :Festival
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Pays
+                :Region
+                :Ville
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

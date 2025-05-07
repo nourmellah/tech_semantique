@@ -1,0 +1,674 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://example.org/tourisme#"
+     xml:base="http://example.org/tourisme"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology>
+        <owl:imports rdf:resource="file:/C:/Users/mella/Desktop/projet%20sem/tourisme_ins.ttl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://example.org/tourisme#hasAccommodation -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/tourisme#hasAccommodation">
+        <owl:inverseOf rdf:resource="http://example.org/tourisme#isAccommodationOf"/>
+        <rdfs:domain rdf:resource="http://example.org/tourisme#Touriste"/>
+        <rdfs:range rdf:resource="http://example.org/tourisme#Hebergement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/tourisme#hasActivity -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/tourisme#hasActivity">
+        <rdfs:domain rdf:resource="http://example.org/tourisme#Service"/>
+        <rdfs:range rdf:resource="http://example.org/tourisme#Activite"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/tourisme#hasDestination -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/tourisme#hasDestination">
+        <rdfs:domain rdf:resource="http://example.org/tourisme#Service"/>
+        <rdfs:range rdf:resource="http://example.org/tourisme#Destination"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/tourisme#hasParticipant -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/tourisme#hasParticipant">
+        <owl:inverseOf rdf:resource="http://example.org/tourisme#participatesInActivity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/tourisme#hasTransportation -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/tourisme#hasTransportation">
+        <rdfs:domain rdf:resource="http://example.org/tourisme#Service"/>
+        <rdfs:range rdf:resource="http://example.org/tourisme#Transport"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/tourisme#isAccommodationOf -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/tourisme#isAccommodationOf"/>
+    
+
+
+    <!-- http://example.org/tourisme#isManagedBy -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/tourisme#isManagedBy">
+        <owl:inverseOf rdf:resource="http://example.org/tourisme#managesTour"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/tourisme#isOfferedBy -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/tourisme#isOfferedBy">
+        <owl:inverseOf rdf:resource="http://example.org/tourisme#offersService"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/tourisme#isOrganizedBy -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/tourisme#isOrganizedBy">
+        <owl:inverseOf rdf:resource="http://example.org/tourisme#organizesEvent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/tourisme#locatedIn -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/tourisme#locatedIn">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://example.org/tourisme#Destination"/>
+        <rdfs:range rdf:resource="http://example.org/tourisme#Destination"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/tourisme#managesTour -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/tourisme#managesTour">
+        <rdfs:domain rdf:resource="http://example.org/tourisme#GuideTouristique"/>
+        <rdfs:range rdf:resource="http://example.org/tourisme#Activite"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/tourisme#offersService -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/tourisme#offersService">
+        <rdfs:domain rdf:resource="http://example.org/tourisme#OperateurTouristique"/>
+        <rdfs:range rdf:resource="http://example.org/tourisme#Service"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/tourisme#organizesEvent -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/tourisme#organizesEvent">
+        <rdfs:domain rdf:resource="http://example.org/tourisme#Organisation"/>
+        <rdfs:range rdf:resource="http://example.org/tourisme#Evenement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/tourisme#participatesInActivity -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/tourisme#participatesInActivity">
+        <rdfs:domain rdf:resource="http://example.org/tourisme#Touriste"/>
+        <rdfs:range rdf:resource="http://example.org/tourisme#Activite"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://example.org/tourisme#capacity -->
+
+    <owl:DatatypeProperty rdf:about="http://example.org/tourisme#capacity">
+        <rdfs:domain rdf:resource="http://example.org/tourisme#Evenement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://example.org/tourisme#email -->
+
+    <owl:DatatypeProperty rdf:about="http://example.org/tourisme#email">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://example.org/tourisme#Agent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://example.org/tourisme#endDate -->
+
+    <owl:DatatypeProperty rdf:about="http://example.org/tourisme#endDate">
+        <rdfs:domain rdf:resource="http://example.org/tourisme#Evenement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://example.org/tourisme#hasDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://example.org/tourisme#hasDescription">
+        <rdfs:domain rdf:resource="http://example.org/tourisme#Tourisme"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://example.org/tourisme#hasName -->
+
+    <owl:DatatypeProperty rdf:about="http://example.org/tourisme#hasName">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://example.org/tourisme#Tourisme"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://example.org/tourisme#hasPrice -->
+
+    <owl:DatatypeProperty rdf:about="http://example.org/tourisme#hasPrice">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://example.org/tourisme#Service"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://example.org/tourisme#hasRating -->
+
+    <owl:DatatypeProperty rdf:about="http://example.org/tourisme#hasRating">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://example.org/tourisme#Service"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://example.org/tourisme#startDate -->
+
+    <owl:DatatypeProperty rdf:about="http://example.org/tourisme#startDate">
+        <rdfs:domain rdf:resource="http://example.org/tourisme#Evenement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://example.org/tourisme#telephone -->
+
+    <owl:DatatypeProperty rdf:about="http://example.org/tourisme#telephone">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://example.org/tourisme#Agent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://example.org/tourisme#website -->
+
+    <owl:DatatypeProperty rdf:about="http://example.org/tourisme#website">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://example.org/tourisme#Agent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/name -->
+
+    <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/name"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://example.org/tourisme#Activite -->
+
+    <owl:Class rdf:about="http://example.org/tourisme#Activite">
+        <rdfs:subClassOf rdf:resource="http://example.org/tourisme#Service"/>
+        <rdfs:comment xml:lang="fr">Activité proposée aux touristes.</rdfs:comment>
+        <rdfs:label xml:lang="fr">Activité</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/tourisme#AgenceDeVoyage -->
+
+    <owl:Class rdf:about="http://example.org/tourisme#AgenceDeVoyage">
+        <rdfs:subClassOf rdf:resource="http://example.org/tourisme#Organisation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/tourisme#Agent -->
+
+    <owl:Class rdf:about="http://example.org/tourisme#Agent">
+        <rdfs:subClassOf rdf:resource="http://example.org/tourisme#Tourisme"/>
+        <owl:hasKey rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/name"/>
+        </owl:hasKey>
+        <rdfs:comment xml:lang="fr">Acteur participant ou organisant le tourisme.</rdfs:comment>
+        <rdfs:label xml:lang="fr">Agent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/tourisme#AubergeDeJeunesse -->
+
+    <owl:Class rdf:about="http://example.org/tourisme#AubergeDeJeunesse">
+        <rdfs:subClassOf rdf:resource="http://example.org/tourisme#Hebergement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/tourisme#Aventure -->
+
+    <owl:Class rdf:about="http://example.org/tourisme#Aventure">
+        <rdfs:subClassOf rdf:resource="http://example.org/tourisme#Activite"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/tourisme#ChaineHoteliere -->
+
+    <owl:Class rdf:about="http://example.org/tourisme#ChaineHoteliere">
+        <rdfs:subClassOf rdf:resource="http://example.org/tourisme#Organisation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/tourisme#Conference -->
+
+    <owl:Class rdf:about="http://example.org/tourisme#Conference">
+        <rdfs:subClassOf rdf:resource="http://example.org/tourisme#Evenement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/tourisme#Culturelle -->
+
+    <owl:Class rdf:about="http://example.org/tourisme#Culturelle">
+        <rdfs:subClassOf rdf:resource="http://example.org/tourisme#Activite"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/tourisme#Destination -->
+
+    <owl:Class rdf:about="http://example.org/tourisme#Destination">
+        <rdfs:subClassOf rdf:resource="http://example.org/tourisme#Tourisme"/>
+        <owl:hasKey rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://example.org/tourisme#hasName"/>
+        </owl:hasKey>
+        <rdfs:comment xml:lang="fr">Lieu visité ou desservi par un service touristique.</rdfs:comment>
+        <rdfs:label xml:lang="fr">Destination</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/tourisme#Evenement -->
+
+    <owl:Class rdf:about="http://example.org/tourisme#Evenement">
+        <rdfs:subClassOf rdf:resource="http://example.org/tourisme#Service"/>
+        <rdfs:comment xml:lang="fr">Événement organisé comme service touristique.</rdfs:comment>
+        <rdfs:label xml:lang="fr">Événement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/tourisme#Exposition -->
+
+    <owl:Class rdf:about="http://example.org/tourisme#Exposition">
+        <rdfs:subClassOf rdf:resource="http://example.org/tourisme#Evenement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/tourisme#Festival -->
+
+    <owl:Class rdf:about="http://example.org/tourisme#Festival">
+        <rdfs:subClassOf rdf:resource="http://example.org/tourisme#Evenement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/tourisme#ForfaitTouristique -->
+
+    <owl:Class rdf:about="http://example.org/tourisme#ForfaitTouristique">
+        <rdfs:subClassOf rdf:resource="http://example.org/tourisme#Service"/>
+        <rdfs:comment xml:lang="fr">Ensemble de services vendus comme un seul produit.</rdfs:comment>
+        <rdfs:label xml:lang="fr">Forfait touristique</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/tourisme#GuideTouristique -->
+
+    <owl:Class rdf:about="http://example.org/tourisme#GuideTouristique">
+        <rdfs:subClassOf rdf:resource="http://example.org/tourisme#Agent"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/tourisme#managesTour"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://example.org/tourisme#Touriste"/>
+        <rdfs:comment xml:lang="fr">Personne guidant les touristes.</rdfs:comment>
+        <rdfs:label xml:lang="fr">Guide touristique</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/tourisme#Hebergement -->
+
+    <owl:Class rdf:about="http://example.org/tourisme#Hebergement">
+        <rdfs:subClassOf rdf:resource="http://example.org/tourisme#Service"/>
+        <rdfs:comment xml:lang="fr">Logement proposé aux touristes.</rdfs:comment>
+        <rdfs:label xml:lang="fr">Hébergement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/tourisme#Hotel -->
+
+    <owl:Class rdf:about="http://example.org/tourisme#Hotel">
+        <rdfs:subClassOf rdf:resource="http://example.org/tourisme#Hebergement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/tourisme#Loisir -->
+
+    <owl:Class rdf:about="http://example.org/tourisme#Loisir">
+        <rdfs:subClassOf rdf:resource="http://example.org/tourisme#Activite"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/tourisme#MaisonDHotes -->
+
+    <owl:Class rdf:about="http://example.org/tourisme#MaisonDHotes">
+        <rdfs:subClassOf rdf:resource="http://example.org/tourisme#Hebergement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/tourisme#OperateurTouristique -->
+
+    <owl:Class rdf:about="http://example.org/tourisme#OperateurTouristique">
+        <rdfs:subClassOf rdf:resource="http://example.org/tourisme#Organisation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/tourisme#Organisation -->
+
+    <owl:Class rdf:about="http://example.org/tourisme#Organisation">
+        <rdfs:subClassOf rdf:resource="http://example.org/tourisme#Agent"/>
+        <rdfs:comment xml:lang="fr">Entité fournissant des services touristiques.</rdfs:comment>
+        <rdfs:label xml:lang="fr">Organisation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/tourisme#Pays -->
+
+    <owl:Class rdf:about="http://example.org/tourisme#Pays">
+        <rdfs:subClassOf rdf:resource="http://example.org/tourisme#Destination"/>
+        <rdfs:comment xml:lang="fr">Entité géopolitique de plus grande échelle.</rdfs:comment>
+        <rdfs:label xml:lang="fr">Pays</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/tourisme#Region -->
+
+    <owl:Class rdf:about="http://example.org/tourisme#Region">
+        <rdfs:subClassOf rdf:resource="http://example.org/tourisme#Destination"/>
+        <rdfs:comment xml:lang="fr">Division administrative d&apos;un pays.</rdfs:comment>
+        <rdfs:label xml:lang="fr">Région</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/tourisme#Service -->
+
+    <owl:Class rdf:about="http://example.org/tourisme#Service">
+        <rdfs:subClassOf rdf:resource="http://example.org/tourisme#Tourisme"/>
+        <owl:hasKey rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://example.org/tourisme#hasName"/>
+        </owl:hasKey>
+        <rdfs:comment xml:lang="fr">Tout service touristique (activité, hébergement, transport).</rdfs:comment>
+        <rdfs:label xml:lang="fr">Service</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/tourisme#Tourisme -->
+
+    <owl:Class rdf:about="http://example.org/tourisme#Tourisme">
+        <rdfs:comment xml:lang="fr">Domaine général du tourisme.</rdfs:comment>
+        <rdfs:label xml:lang="fr">Tourisme</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/tourisme#Touriste -->
+
+    <owl:Class rdf:about="http://example.org/tourisme#Touriste">
+        <rdfs:subClassOf rdf:resource="http://example.org/tourisme#Agent"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/tourisme#participatesInActivity"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/tourisme#hasAccommodation"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="fr">Personne voyageant pour le tourisme.</rdfs:comment>
+        <rdfs:label xml:lang="fr">Touriste</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/tourisme#Transport -->
+
+    <owl:Class rdf:about="http://example.org/tourisme#Transport">
+        <rdfs:subClassOf rdf:resource="http://example.org/tourisme#Service"/>
+        <rdfs:comment xml:lang="fr">Service de déplacement pour touristes.</rdfs:comment>
+        <rdfs:label xml:lang="fr">Transport</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/tourisme#TransportAerien -->
+
+    <owl:Class rdf:about="http://example.org/tourisme#TransportAerien">
+        <rdfs:subClassOf rdf:resource="http://example.org/tourisme#Transport"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/tourisme#TransportFerroviaire -->
+
+    <owl:Class rdf:about="http://example.org/tourisme#TransportFerroviaire">
+        <rdfs:subClassOf rdf:resource="http://example.org/tourisme#Transport"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/tourisme#TransportRoutier -->
+
+    <owl:Class rdf:about="http://example.org/tourisme#TransportRoutier">
+        <rdfs:subClassOf rdf:resource="http://example.org/tourisme#Transport"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/tourisme#Ville -->
+
+    <owl:Class rdf:about="http://example.org/tourisme#Ville">
+        <rdfs:subClassOf rdf:resource="http://example.org/tourisme#Destination"/>
+        <rdfs:comment xml:lang="fr">Zone urbaine desservie par les services touristiques.</rdfs:comment>
+        <rdfs:label xml:lang="fr">Ville</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://example.org/tourisme#AccorHotels -->
+
+    <rdf:Description rdf:about="http://example.org/tourisme#AccorHotels">
+        <rdf:type rdf:resource="http://example.org/tourisme#ChaineHoteliere"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://example.org/tourisme#Viator -->
+
+    <rdf:Description rdf:about="http://example.org/tourisme#Viator">
+        <rdf:type rdf:resource="http://example.org/tourisme#ChaineHoteliere"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://example.org/tourisme#Activite"/>
+            <rdf:Description rdf:about="http://example.org/tourisme#ForfaitTouristique"/>
+            <rdf:Description rdf:about="http://example.org/tourisme#Hebergement"/>
+            <rdf:Description rdf:about="http://example.org/tourisme#Transport"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://example.org/tourisme#AgenceDeVoyage"/>
+            <rdf:Description rdf:about="http://example.org/tourisme#ChaineHoteliere"/>
+            <rdf:Description rdf:about="http://example.org/tourisme#OperateurTouristique"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://example.org/tourisme#AubergeDeJeunesse"/>
+            <rdf:Description rdf:about="http://example.org/tourisme#Hotel"/>
+            <rdf:Description rdf:about="http://example.org/tourisme#MaisonDHotes"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://example.org/tourisme#Aventure"/>
+            <rdf:Description rdf:about="http://example.org/tourisme#Culturelle"/>
+            <rdf:Description rdf:about="http://example.org/tourisme#Loisir"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://example.org/tourisme#Conference"/>
+            <rdf:Description rdf:about="http://example.org/tourisme#Exposition"/>
+            <rdf:Description rdf:about="http://example.org/tourisme#Festival"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://example.org/tourisme#Pays"/>
+            <rdf:Description rdf:about="http://example.org/tourisme#Region"/>
+            <rdf:Description rdf:about="http://example.org/tourisme#Ville"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

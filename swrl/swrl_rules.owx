@@ -1,0 +1,902 @@
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+Prefix: : <http://www.semanticweb.org/mella/ontologies/2025/4/untitled-ontology-39>
+
+
+
+Ontology: <http://www.semanticweb.org/mella/ontologies/2025/4/untitled-ontology-39>
+
+
+AnnotationProperty: <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled>
+
+    
+AnnotationProperty: rdfs:comment
+
+    
+AnnotationProperty: rdfs:label
+
+    
+Datatype: rdf:PlainLiteral
+
+    
+Datatype: xsd:boolean
+
+    
+Datatype: xsd:date
+
+    
+Datatype: xsd:decimal
+
+    
+Datatype: xsd:integer
+
+    
+Datatype: xsd:string
+
+    
+ObjectProperty: <http://example.org/tourisme#hasAccommodation>
+
+    Domain: 
+        <http://example.org/tourisme#Agent>,
+        <http://example.org/tourisme#Tourisme>,
+        <http://example.org/tourisme#Touriste>,
+        <http://example.org/tourisme#participatesInActivity> min 1 owl:Thing,
+        <http://example.org/tourisme#hasAccommodation> exactly 1 owl:Thing
+    
+    Range: 
+        <http://example.org/tourisme#Hebergement>,
+        <http://example.org/tourisme#Service>,
+        <http://example.org/tourisme#Tourisme>
+    
+    InverseOf: 
+        <http://example.org/tourisme#isAccommodationOf>
+    
+    
+ObjectProperty: <http://example.org/tourisme#hasActivity>
+
+    Domain: 
+        <http://example.org/tourisme#Service>,
+        <http://example.org/tourisme#Tourisme>
+    
+    Range: 
+        <http://example.org/tourisme#Activite>,
+        <http://example.org/tourisme#Service>,
+        <http://example.org/tourisme#Tourisme>
+    
+    
+ObjectProperty: <http://example.org/tourisme#hasDestination>
+
+    Domain: 
+        <http://example.org/tourisme#Service>,
+        <http://example.org/tourisme#Tourisme>
+    
+    Range: 
+        <http://example.org/tourisme#Destination>,
+        <http://example.org/tourisme#Tourisme>
+    
+    
+ObjectProperty: <http://example.org/tourisme#hasParticipant>
+
+    InverseOf: 
+        <http://example.org/tourisme#participatesInActivity>
+    
+    
+ObjectProperty: <http://example.org/tourisme#hasTransportation>
+
+    Domain: 
+        <http://example.org/tourisme#Service>,
+        <http://example.org/tourisme#Tourisme>
+    
+    Range: 
+        <http://example.org/tourisme#Service>,
+        <http://example.org/tourisme#Tourisme>,
+        <http://example.org/tourisme#Transport>
+    
+    
+ObjectProperty: <http://example.org/tourisme#isAccommodationOf>
+
+    InverseOf: 
+        <http://example.org/tourisme#hasAccommodation>
+    
+    
+ObjectProperty: <http://example.org/tourisme#isManagedBy>
+
+    InverseOf: 
+        <http://example.org/tourisme#managesTour>
+    
+    
+ObjectProperty: <http://example.org/tourisme#isOfferedBy>
+
+    InverseOf: 
+        <http://example.org/tourisme#offersService>
+    
+    
+ObjectProperty: <http://example.org/tourisme#isOrganizedBy>
+
+    InverseOf: 
+        <http://example.org/tourisme#organizesEvent>
+    
+    
+ObjectProperty: <http://example.org/tourisme#locatedIn>
+
+    Characteristics: 
+        Transitive
+    
+    Domain: 
+        <http://example.org/tourisme#Destination>,
+        <http://example.org/tourisme#Tourisme>
+    
+    Range: 
+        <http://example.org/tourisme#Destination>,
+        <http://example.org/tourisme#Tourisme>
+    
+    
+ObjectProperty: <http://example.org/tourisme#managesTour>
+
+    Domain: 
+        <http://example.org/tourisme#Agent>,
+        <http://example.org/tourisme#GuideTouristique>,
+        <http://example.org/tourisme#Tourisme>,
+        <http://example.org/tourisme#managesTour> min 1 owl:Thing
+    
+    Range: 
+        <http://example.org/tourisme#Activite>,
+        <http://example.org/tourisme#Service>,
+        <http://example.org/tourisme#Tourisme>
+    
+    InverseOf: 
+        <http://example.org/tourisme#isManagedBy>
+    
+    
+ObjectProperty: <http://example.org/tourisme#offersService>
+
+    Domain: 
+        <http://example.org/tourisme#Agent>,
+        <http://example.org/tourisme#OperateurTouristique>,
+        <http://example.org/tourisme#Organisation>,
+        <http://example.org/tourisme#Tourisme>
+    
+    Range: 
+        <http://example.org/tourisme#Service>,
+        <http://example.org/tourisme#Tourisme>
+    
+    InverseOf: 
+        <http://example.org/tourisme#isOfferedBy>
+    
+    
+ObjectProperty: <http://example.org/tourisme#organizesEvent>
+
+    Domain: 
+        <http://example.org/tourisme#Agent>,
+        <http://example.org/tourisme#Organisation>,
+        <http://example.org/tourisme#Tourisme>
+    
+    Range: 
+        <http://example.org/tourisme#Evenement>,
+        <http://example.org/tourisme#Service>,
+        <http://example.org/tourisme#Tourisme>
+    
+    InverseOf: 
+        <http://example.org/tourisme#isOrganizedBy>
+    
+    
+ObjectProperty: <http://example.org/tourisme#participatesInActivity>
+
+    Domain: 
+        <http://example.org/tourisme#Agent>,
+        <http://example.org/tourisme#Tourisme>,
+        <http://example.org/tourisme#Touriste>,
+        <http://example.org/tourisme#participatesInActivity> min 1 owl:Thing,
+        <http://example.org/tourisme#hasAccommodation> exactly 1 owl:Thing
+    
+    Range: 
+        <http://example.org/tourisme#Activite>,
+        <http://example.org/tourisme#Service>,
+        <http://example.org/tourisme#Tourisme>
+    
+    InverseOf: 
+        <http://example.org/tourisme#hasParticipant>
+    
+    
+DataProperty: <http://example.org/tourisme#capacity>
+
+    Domain: 
+        <http://example.org/tourisme#Evenement>,
+        <http://example.org/tourisme#Service>,
+        <http://example.org/tourisme#Tourisme>
+    
+    Range: 
+        xsd:integer
+    
+    
+DataProperty: <http://example.org/tourisme#email>
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        <http://example.org/tourisme#Agent>,
+        <http://example.org/tourisme#Tourisme>
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: <http://example.org/tourisme#endDate>
+
+    Domain: 
+        <http://example.org/tourisme#Evenement>,
+        <http://example.org/tourisme#Service>,
+        <http://example.org/tourisme#Tourisme>
+    
+    Range: 
+        xsd:date
+    
+    
+DataProperty: <http://example.org/tourisme#hasDescription>
+
+    Domain: 
+        <http://example.org/tourisme#Tourisme>
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: <http://example.org/tourisme#hasName>
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        <http://example.org/tourisme#Tourisme>
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: <http://example.org/tourisme#hasPrice>
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        <http://example.org/tourisme#Service>,
+        <http://example.org/tourisme#Tourisme>
+    
+    Range: 
+        xsd:decimal
+    
+    
+DataProperty: <http://example.org/tourisme#hasRating>
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        <http://example.org/tourisme#Service>,
+        <http://example.org/tourisme#Tourisme>
+    
+    Range: 
+        xsd:decimal
+    
+    
+DataProperty: <http://example.org/tourisme#startDate>
+
+    Domain: 
+        <http://example.org/tourisme#Evenement>,
+        <http://example.org/tourisme#Service>,
+        <http://example.org/tourisme#Tourisme>
+    
+    Range: 
+        xsd:date
+    
+    
+DataProperty: <http://example.org/tourisme#telephone>
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        <http://example.org/tourisme#Agent>,
+        <http://example.org/tourisme#Tourisme>
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: <http://example.org/tourisme#website>
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        <http://example.org/tourisme#Agent>,
+        <http://example.org/tourisme#Tourisme>
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: <http://xmlns.com/foaf/0.1/name>
+
+    
+Class: <http://example.org/tourisme#Activite>
+
+    Annotations: 
+        rdfs:comment "Activité proposée aux touristes."@fr,
+        rdfs:label "Activité"@fr
+    
+    SubClassOf: 
+        <http://example.org/tourisme#Service>,
+        <http://example.org/tourisme#Tourisme>
+    
+    
+Class: <http://example.org/tourisme#AgenceDeVoyage>
+
+    SubClassOf: 
+        <http://example.org/tourisme#Agent>,
+        <http://example.org/tourisme#Organisation>,
+        <http://example.org/tourisme#Tourisme>
+    
+    
+Class: <http://example.org/tourisme#Agent>
+
+    Annotations: 
+        rdfs:comment "Acteur participant ou organisant le tourisme."@fr,
+        rdfs:label "Agent"@fr
+    
+    SubClassOf: 
+        <http://example.org/tourisme#Tourisme>
+    
+    HasKey: 
+        <http://xmlns.com/foaf/0.1/name>
+    
+    
+Class: <http://example.org/tourisme#AubergeDeJeunesse>
+
+    SubClassOf: 
+        <http://example.org/tourisme#Hebergement>,
+        <http://example.org/tourisme#Service>,
+        <http://example.org/tourisme#Tourisme>
+    
+    
+Class: <http://example.org/tourisme#Aventure>
+
+    SubClassOf: 
+        <http://example.org/tourisme#Activite>,
+        <http://example.org/tourisme#Service>,
+        <http://example.org/tourisme#Tourisme>
+    
+    
+Class: <http://example.org/tourisme#ChaineHoteliere>
+
+    SubClassOf: 
+        <http://example.org/tourisme#Agent>,
+        <http://example.org/tourisme#Organisation>,
+        <http://example.org/tourisme#Tourisme>
+    
+    
+Class: <http://example.org/tourisme#Conference>
+
+    SubClassOf: 
+        <http://example.org/tourisme#Evenement>,
+        <http://example.org/tourisme#Service>,
+        <http://example.org/tourisme#Tourisme>
+    
+    
+Class: <http://example.org/tourisme#Culturelle>
+
+    SubClassOf: 
+        <http://example.org/tourisme#Activite>,
+        <http://example.org/tourisme#Service>,
+        <http://example.org/tourisme#Tourisme>
+    
+    
+Class: <http://example.org/tourisme#Destination>
+
+    Annotations: 
+        rdfs:comment "Lieu visité ou desservi par un service touristique."@fr,
+        rdfs:label "Destination"@fr
+    
+    SubClassOf: 
+        <http://example.org/tourisme#Tourisme>
+    
+    HasKey: 
+        <http://example.org/tourisme#hasName>
+    
+    
+Class: <http://example.org/tourisme#Evenement>
+
+    Annotations: 
+        rdfs:comment "Événement organisé comme service touristique."@fr,
+        rdfs:label "Événement"@fr
+    
+    SubClassOf: 
+        <http://example.org/tourisme#Service>,
+        <http://example.org/tourisme#Tourisme>
+    
+    
+Class: <http://example.org/tourisme#Exposition>
+
+    SubClassOf: 
+        <http://example.org/tourisme#Evenement>,
+        <http://example.org/tourisme#Service>,
+        <http://example.org/tourisme#Tourisme>
+    
+    
+Class: <http://example.org/tourisme#Festival>
+
+    SubClassOf: 
+        <http://example.org/tourisme#Evenement>,
+        <http://example.org/tourisme#Service>,
+        <http://example.org/tourisme#Tourisme>
+    
+    
+Class: <http://example.org/tourisme#ForfaitTouristique>
+
+    Annotations: 
+        rdfs:comment "Ensemble de services vendus comme un seul produit."@fr,
+        rdfs:label "Forfait touristique"@fr
+    
+    SubClassOf: 
+        <http://example.org/tourisme#Service>,
+        <http://example.org/tourisme#Tourisme>
+    
+    
+Class: <http://example.org/tourisme#GuideTouristique>
+
+    Annotations: 
+        rdfs:comment "Personne guidant les touristes."@fr,
+        rdfs:label "Guide touristique"@fr
+    
+    SubClassOf: 
+        <http://example.org/tourisme#Agent>,
+        <http://example.org/tourisme#Tourisme>,
+        <http://example.org/tourisme#managesTour> min 1 owl:Thing
+    
+    DisjointWith: 
+        <http://example.org/tourisme#Touriste>
+    
+    
+Class: <http://example.org/tourisme#Hebergement>
+
+    Annotations: 
+        rdfs:comment "Logement proposé aux touristes."@fr,
+        rdfs:label "Hébergement"@fr
+    
+    SubClassOf: 
+        <http://example.org/tourisme#Service>,
+        <http://example.org/tourisme#Tourisme>
+    
+    
+Class: <http://example.org/tourisme#Hotel>
+
+    SubClassOf: 
+        <http://example.org/tourisme#Hebergement>,
+        <http://example.org/tourisme#Service>,
+        <http://example.org/tourisme#Tourisme>
+    
+    
+Class: <http://example.org/tourisme#Loisir>
+
+    SubClassOf: 
+        <http://example.org/tourisme#Activite>,
+        <http://example.org/tourisme#Service>,
+        <http://example.org/tourisme#Tourisme>
+    
+    
+Class: <http://example.org/tourisme#MaisonDHotes>
+
+    SubClassOf: 
+        <http://example.org/tourisme#Hebergement>,
+        <http://example.org/tourisme#Service>,
+        <http://example.org/tourisme#Tourisme>
+    
+    
+Class: <http://example.org/tourisme#OperateurTouristique>
+
+    SubClassOf: 
+        <http://example.org/tourisme#Agent>,
+        <http://example.org/tourisme#Organisation>,
+        <http://example.org/tourisme#Tourisme>
+    
+    
+Class: <http://example.org/tourisme#Organisation>
+
+    Annotations: 
+        rdfs:comment "Entité fournissant des services touristiques."@fr,
+        rdfs:label "Organisation"@fr
+    
+    SubClassOf: 
+        <http://example.org/tourisme#Agent>,
+        <http://example.org/tourisme#Tourisme>
+    
+    
+Class: <http://example.org/tourisme#Pays>
+
+    Annotations: 
+        rdfs:comment "Entité géopolitique de plus grande échelle."@fr,
+        rdfs:label "Pays"@fr
+    
+    SubClassOf: 
+        <http://example.org/tourisme#Destination>,
+        <http://example.org/tourisme#Tourisme>
+    
+    
+Class: <http://example.org/tourisme#Region>
+
+    Annotations: 
+        rdfs:comment "Division administrative d'un pays."@fr,
+        rdfs:label "Région"@fr
+    
+    SubClassOf: 
+        <http://example.org/tourisme#Destination>,
+        <http://example.org/tourisme#Tourisme>
+    
+    
+Class: <http://example.org/tourisme#Service>
+
+    Annotations: 
+        rdfs:comment "Tout service touristique (activité, hébergement, transport)."@fr,
+        rdfs:label "Service"@fr
+    
+    SubClassOf: 
+        <http://example.org/tourisme#Tourisme>
+    
+    HasKey: 
+        <http://example.org/tourisme#hasName>
+    
+    
+Class: <http://example.org/tourisme#Tourisme>
+
+    Annotations: 
+        rdfs:comment "Domaine général du tourisme."@fr,
+        rdfs:label "Tourisme"@fr
+    
+    
+Class: <http://example.org/tourisme#Touriste>
+
+    Annotations: 
+        rdfs:comment "Personne voyageant pour le tourisme."@fr,
+        rdfs:label "Touriste"@fr
+    
+    SubClassOf: 
+        <http://example.org/tourisme#Agent>,
+        <http://example.org/tourisme#Tourisme>,
+        <http://example.org/tourisme#participatesInActivity> min 1 owl:Thing,
+        <http://example.org/tourisme#hasAccommodation> exactly 1 owl:Thing
+    
+    DisjointWith: 
+        <http://example.org/tourisme#GuideTouristique>
+    
+    
+Class: <http://example.org/tourisme#Transport>
+
+    Annotations: 
+        rdfs:comment "Service de déplacement pour touristes."@fr,
+        rdfs:label "Transport"@fr
+    
+    SubClassOf: 
+        <http://example.org/tourisme#Service>,
+        <http://example.org/tourisme#Tourisme>
+    
+    
+Class: <http://example.org/tourisme#TransportAerien>
+
+    SubClassOf: 
+        <http://example.org/tourisme#Service>,
+        <http://example.org/tourisme#Tourisme>,
+        <http://example.org/tourisme#Transport>
+    
+    
+Class: <http://example.org/tourisme#TransportFerroviaire>
+
+    SubClassOf: 
+        <http://example.org/tourisme#Service>,
+        <http://example.org/tourisme#Tourisme>,
+        <http://example.org/tourisme#Transport>
+    
+    
+Class: <http://example.org/tourisme#TransportRoutier>
+
+    SubClassOf: 
+        <http://example.org/tourisme#Service>,
+        <http://example.org/tourisme#Tourisme>,
+        <http://example.org/tourisme#Transport>
+    
+    
+Class: <http://example.org/tourisme#Ville>
+
+    Annotations: 
+        rdfs:comment "Zone urbaine desservie par les services touristiques."@fr,
+        rdfs:label "Ville"@fr
+    
+    SubClassOf: 
+        <http://example.org/tourisme#Destination>,
+        <http://example.org/tourisme#Tourisme>
+    
+    
+Class: owl:Thing
+
+    
+Individual: <http://example.org/tourisme#AccorHotels>
+
+    Types: 
+        <http://example.org/tourisme#Agent>,
+        <http://example.org/tourisme#ChaineHoteliere>,
+        <http://example.org/tourisme#Organisation>,
+        <http://example.org/tourisme#Tourisme>
+    
+    Facts:  
+     <http://example.org/tourisme#website>  "https://group.accor.com",
+     <http://xmlns.com/foaf/0.1/name>  "Accor Hotels"
+    
+    
+Individual: <http://example.org/tourisme#AixEnProvence>
+
+    Types: 
+        <http://example.org/tourisme#Destination>,
+        <http://example.org/tourisme#Tourisme>,
+        <http://example.org/tourisme#Ville>
+    
+    Facts:  
+     <http://example.org/tourisme#locatedIn>  <http://example.org/tourisme#France>,
+     <http://example.org/tourisme#locatedIn>  <http://example.org/tourisme#Provence>,
+     <http://example.org/tourisme#hasName>  "Aix-en-Provence"
+    
+    
+Individual: <http://example.org/tourisme#Ali>
+
+    Types: 
+        <http://example.org/tourisme#Agent>,
+        <http://example.org/tourisme#Tourisme>,
+        <http://example.org/tourisme#Touriste>,
+        <http://example.org/tourisme#participatesInActivity> min 1 owl:Thing,
+        <http://example.org/tourisme#hasAccommodation> exactly 1 owl:Thing
+    
+    Facts:  
+     <http://example.org/tourisme#hasAccommodation>  <http://example.org/tourisme#HotelLouvre>,
+     <http://example.org/tourisme#participatesInActivity>  <http://example.org/tourisme#KayakSeine>,
+     <http://example.org/tourisme#participatesInActivity>  <http://example.org/tourisme#LouvreVisit>,
+     <http://example.org/tourisme#email>  "ali@example.com",
+     <http://xmlns.com/foaf/0.1/name>  "Ali Mellah"
+    
+    
+Individual: <http://example.org/tourisme#ExpediaFR>
+
+    Types: 
+        <http://example.org/tourisme#AgenceDeVoyage>,
+        <http://example.org/tourisme#Agent>,
+        <http://example.org/tourisme#Organisation>,
+        <http://example.org/tourisme#Tourisme>
+    
+    Facts:  
+     <http://example.org/tourisme#email>  "support@expedia.fr",
+     <http://example.org/tourisme#website>  "https://www.expedia.fr",
+     <http://xmlns.com/foaf/0.1/name>  "Expedia France"
+    
+    
+Individual: <http://example.org/tourisme#France>
+
+    Types: 
+        <http://example.org/tourisme#Destination>,
+        <http://example.org/tourisme#Pays>,
+        <http://example.org/tourisme#Tourisme>
+    
+    Facts:  
+     <http://example.org/tourisme#hasDescription>  "Pays d'Europe connu pour sa culture et sa gastronomie.",
+     <http://example.org/tourisme#hasName>  "France"
+    
+    
+Individual: <http://example.org/tourisme#HotelLouvre>
+
+    Types: 
+        <http://example.org/tourisme#Destination>,
+        <http://example.org/tourisme#Hebergement>,
+        <http://example.org/tourisme#Hotel>,
+        <http://example.org/tourisme#Service>,
+        <http://example.org/tourisme#Tourisme>
+    
+    Facts:  
+     <http://example.org/tourisme#isAccommodationOf>  <http://example.org/tourisme#Ali>,
+     <http://example.org/tourisme#locatedIn>  <http://example.org/tourisme#France>,
+     <http://example.org/tourisme#locatedIn>  <http://example.org/tourisme#Paris>,
+     <http://example.org/tourisme#locatedIn>  <http://example.org/tourisme#ÎleDeFrance>,
+     <http://example.org/tourisme#hasName>  "Hôtel du Louvre",
+     <http://example.org/tourisme#hasPrice>  150,
+     <http://example.org/tourisme#hasRating>  4.6
+    
+    
+Individual: <http://example.org/tourisme#KayakSeine>
+
+    Types: 
+        <http://example.org/tourisme#Activite>,
+        <http://example.org/tourisme#Destination>,
+        <http://example.org/tourisme#Evenement>,
+        <http://example.org/tourisme#Service>,
+        <http://example.org/tourisme#Tourisme>
+    
+    Facts:  
+     <http://example.org/tourisme#hasParticipant>  <http://example.org/tourisme#Ali>,
+     <http://example.org/tourisme#locatedIn>  <http://example.org/tourisme#France>,
+     <http://example.org/tourisme#locatedIn>  <http://example.org/tourisme#Paris>,
+     <http://example.org/tourisme#locatedIn>  <http://example.org/tourisme#ÎleDeFrance>,
+     <http://example.org/tourisme#capacity>  12,
+     <http://example.org/tourisme#endDate>  "2025-06-10"^^xsd:date,
+     <http://example.org/tourisme#hasName>  "Kayak sur la Seine",
+     <http://example.org/tourisme#startDate>  "2025-06-10"^^xsd:date
+    
+    
+Individual: <http://example.org/tourisme#LouvreVisit>
+
+    Types: 
+        <http://example.org/tourisme#Activite>,
+        <http://example.org/tourisme#Destination>,
+        <http://example.org/tourisme#Evenement>,
+        <http://example.org/tourisme#Service>,
+        <http://example.org/tourisme#Tourisme>
+    
+    Facts:  
+     <http://example.org/tourisme#hasParticipant>  <http://example.org/tourisme#Ali>,
+     <http://example.org/tourisme#isManagedBy>  <http://example.org/tourisme#PierreGuide>,
+     <http://example.org/tourisme#locatedIn>  <http://example.org/tourisme#France>,
+     <http://example.org/tourisme#locatedIn>  <http://example.org/tourisme#Paris>,
+     <http://example.org/tourisme#locatedIn>  <http://example.org/tourisme#ÎleDeFrance>,
+     <http://example.org/tourisme#capacity>  20,
+     <http://example.org/tourisme#endDate>  "2025-06-01"^^xsd:date,
+     <http://example.org/tourisme#hasName>  "Visite guidée du Louvre",
+     <http://example.org/tourisme#startDate>  "2025-06-01"^^xsd:date
+    
+    
+Individual: <http://example.org/tourisme#MaisonDuSud>
+
+    Types: 
+        <http://example.org/tourisme#Destination>,
+        <http://example.org/tourisme#Hebergement>,
+        <http://example.org/tourisme#MaisonDHotes>,
+        <http://example.org/tourisme#Service>,
+        <http://example.org/tourisme#Tourisme>
+    
+    Facts:  
+     <http://example.org/tourisme#isAccommodationOf>  <http://example.org/tourisme#Marie>,
+     <http://example.org/tourisme#locatedIn>  <http://example.org/tourisme#France>,
+     <http://example.org/tourisme#locatedIn>  <http://example.org/tourisme#Provence>,
+     <http://example.org/tourisme#hasName>  "Maison du Sud",
+     <http://example.org/tourisme#hasPrice>  80,
+     <http://example.org/tourisme#hasRating>  4.8
+    
+    
+Individual: <http://example.org/tourisme#Marie>
+
+    Types: 
+        <http://example.org/tourisme#Agent>,
+        <http://example.org/tourisme#Tourisme>,
+        <http://example.org/tourisme#Touriste>,
+        <http://example.org/tourisme#participatesInActivity> min 1 owl:Thing,
+        <http://example.org/tourisme#hasAccommodation> exactly 1 owl:Thing
+    
+    Facts:  
+     <http://example.org/tourisme#hasAccommodation>  <http://example.org/tourisme#MaisonDuSud>,
+     <http://example.org/tourisme#participatesInActivity>  <http://example.org/tourisme#WineTour>,
+     <http://example.org/tourisme#email>  "marie@example.com",
+     <http://xmlns.com/foaf/0.1/name>  "Marie Curie"
+    
+    
+Individual: <http://example.org/tourisme#Paris>
+
+    Types: 
+        <http://example.org/tourisme#Destination>,
+        <http://example.org/tourisme#Tourisme>,
+        <http://example.org/tourisme#Ville>
+    
+    Facts:  
+     <http://example.org/tourisme#locatedIn>  <http://example.org/tourisme#France>,
+     <http://example.org/tourisme#locatedIn>  <http://example.org/tourisme#ÎleDeFrance>,
+     <http://example.org/tourisme#hasDescription>  "Capitale de la France, célèbre pour la tour Eiffel.",
+     <http://example.org/tourisme#hasName>  "Paris"
+    
+    
+Individual: <http://example.org/tourisme#PierreGuide>
+
+    Types: 
+        <http://example.org/tourisme#Agent>,
+        <http://example.org/tourisme#GuideTouristique>,
+        <http://example.org/tourisme#Tourisme>,
+        <http://example.org/tourisme#managesTour> min 1 owl:Thing
+    
+    Facts:  
+     <http://example.org/tourisme#managesTour>  <http://example.org/tourisme#LouvreVisit>,
+     <http://xmlns.com/foaf/0.1/name>  "Pierre Dupont"
+    
+    
+Individual: <http://example.org/tourisme#Provence>
+
+    Types: 
+        <http://example.org/tourisme#Destination>,
+        <http://example.org/tourisme#Region>,
+        <http://example.org/tourisme#Tourisme>
+    
+    Facts:  
+     <http://example.org/tourisme#locatedIn>  <http://example.org/tourisme#France>,
+     <http://example.org/tourisme#hasName>  "Provence"
+    
+    
+Individual: <http://example.org/tourisme#Viator>
+
+    Types: 
+        <http://example.org/tourisme#Agent>,
+        <http://example.org/tourisme#ChaineHoteliere>,
+        <http://example.org/tourisme#Organisation>,
+        <http://example.org/tourisme#Tourisme>
+    
+    Facts:  
+     <http://example.org/tourisme#email>  "contact@viator.com",
+     <http://example.org/tourisme#telephone>  "+33123456789",
+     <http://example.org/tourisme#website>  "https://www.viator.com",
+     <http://xmlns.com/foaf/0.1/name>  "Viator Travel"
+    
+    
+Individual: <http://example.org/tourisme#WineTour>
+
+    Types: 
+        <http://example.org/tourisme#Activite>,
+        <http://example.org/tourisme#Destination>,
+        <http://example.org/tourisme#Evenement>,
+        <http://example.org/tourisme#Service>,
+        <http://example.org/tourisme#Tourisme>
+    
+    Facts:  
+     <http://example.org/tourisme#hasParticipant>  <http://example.org/tourisme#Marie>,
+     <http://example.org/tourisme#locatedIn>  <http://example.org/tourisme#France>,
+     <http://example.org/tourisme#locatedIn>  <http://example.org/tourisme#Provence>,
+     <http://example.org/tourisme#capacity>  15,
+     <http://example.org/tourisme#endDate>  "2025-07-15"^^xsd:date,
+     <http://example.org/tourisme#hasName>  "Dégustation de vins en Provence",
+     <http://example.org/tourisme#startDate>  "2025-07-15"^^xsd:date
+    
+    
+Individual: <http://example.org/tourisme#ÎleDeFrance>
+
+    Types: 
+        <http://example.org/tourisme#Destination>,
+        <http://example.org/tourisme#Region>,
+        <http://example.org/tourisme#Tourisme>
+    
+    Facts:  
+     <http://example.org/tourisme#locatedIn>  <http://example.org/tourisme#France>,
+     <http://example.org/tourisme#hasName>  "Île-de-France"
+    
+    
+DisjointClasses: 
+    <http://example.org/tourisme#Activite>,<http://example.org/tourisme#ForfaitTouristique>,<http://example.org/tourisme#Hebergement>,<http://example.org/tourisme#Transport>
+
+DisjointClasses: 
+    <http://example.org/tourisme#AgenceDeVoyage>,<http://example.org/tourisme#ChaineHoteliere>,<http://example.org/tourisme#OperateurTouristique>
+
+DisjointClasses: 
+    <http://example.org/tourisme#AubergeDeJeunesse>,<http://example.org/tourisme#Hotel>,<http://example.org/tourisme#MaisonDHotes>
+
+DisjointClasses: 
+    <http://example.org/tourisme#Aventure>,<http://example.org/tourisme#Culturelle>,<http://example.org/tourisme#Loisir>
+
+DisjointClasses: 
+    <http://example.org/tourisme#Conference>,<http://example.org/tourisme#Exposition>,<http://example.org/tourisme#Festival>
+
+DisjointClasses: 
+    <http://example.org/tourisme#Pays>,<http://example.org/tourisme#Region>,<http://example.org/tourisme#Ville>
+
+Rule: 
+    <http://example.org/tourisme#ForfaitTouristique>(?<http://example.org/tourisme#f>), <http://example.org/tourisme#hasActivity>(?<http://example.org/tourisme#f>, ?<http://example.org/tourisme#a>), <http://example.org/tourisme#locatedIn>(?<http://example.org/tourisme#a>, ?<http://example.org/tourisme#d>) -> <http://example.org/tourisme#hasDestination>(?<http://example.org/tourisme#f>, ?<http://example.org/tourisme#d>)
+
+Rule: 
+    <http://example.org/tourisme#ForfaitTouristique>(?<http://example.org/tourisme#f>), <http://example.org/tourisme#hasTransportation>(?<http://example.org/tourisme#f>, ?<http://example.org/tourisme#tr>), <http://example.org/tourisme#locatedIn>(?<http://example.org/tourisme#tr>, ?<http://example.org/tourisme#d>) -> <http://example.org/tourisme#hasDestination>(?<http://example.org/tourisme#f>, ?<http://example.org/tourisme#d>)
+
+Rule: 
+    <http://example.org/tourisme#Touriste>(?<http://example.org/tourisme#t>), <http://example.org/tourisme#hasAccommodation>(?<http://example.org/tourisme#t>, ?<http://example.org/tourisme#h>) -> <http://example.org/tourisme#isAccommodationOf>(?<http://example.org/tourisme#h>, ?<http://example.org/tourisme#t>)
+
+Rule: 
+    <http://example.org/tourisme#Touriste>(?<http://example.org/tourisme#t>), <http://example.org/tourisme#participatesInActivity>(?<http://example.org/tourisme#t>, ?<http://example.org/tourisme#a>) -> <http://example.org/tourisme#hasParticipant>(?<http://example.org/tourisme#a>, ?<http://example.org/tourisme#t>)
+

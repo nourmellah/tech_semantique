@@ -1,0 +1,726 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <Prefix name="" IRI="http://example.org/tourisme#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Import>file:/C:/Users/mella/Desktop/projet%20sem/tourisme_ins.ttl</Import>
+    <Declaration>
+        <Class abbreviatedIRI=":Activite"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":AgenceDeVoyage"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Agent"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":AubergeDeJeunesse"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Aventure"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":ChaineHoteliere"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Conference"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Culturelle"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Destination"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Evenement"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Exposition"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Festival"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":ForfaitTouristique"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":GuideTouristique"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Hebergement"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Hotel"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Loisir"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":MaisonDHotes"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":OperateurTouristique"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Organisation"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Pays"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Region"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Service"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Tourisme"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Touriste"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Transport"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":TransportAerien"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":TransportFerroviaire"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":TransportRoutier"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Ville"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":hasAccommodation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":hasActivity"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":hasDestination"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":hasParticipant"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":hasTransportation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":isAccommodationOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":isManagedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":isOfferedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":isOrganizedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":locatedIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":managesTour"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":offersService"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":organizesEvent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":participatesInActivity"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI=":capacity"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI=":email"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI=":endDate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI=":hasDescription"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI=":hasName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI=":hasPrice"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI=":hasRating"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI=":startDate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI=":telephone"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI=":website"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://xmlns.com/foaf/0.1/name"/>
+    </Declaration>
+    <Declaration>
+        <Datatype abbreviatedIRI="xsd:date"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI=":Viator"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI=":AccorHotels"/>
+    </Declaration>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Activite"/>
+        <Class abbreviatedIRI=":Service"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":AgenceDeVoyage"/>
+        <Class abbreviatedIRI=":Organisation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Agent"/>
+        <Class abbreviatedIRI=":Tourisme"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":AubergeDeJeunesse"/>
+        <Class abbreviatedIRI=":Hebergement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Aventure"/>
+        <Class abbreviatedIRI=":Activite"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":ChaineHoteliere"/>
+        <Class abbreviatedIRI=":Organisation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Conference"/>
+        <Class abbreviatedIRI=":Evenement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Culturelle"/>
+        <Class abbreviatedIRI=":Activite"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Destination"/>
+        <Class abbreviatedIRI=":Tourisme"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Evenement"/>
+        <Class abbreviatedIRI=":Service"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Exposition"/>
+        <Class abbreviatedIRI=":Evenement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Festival"/>
+        <Class abbreviatedIRI=":Evenement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":ForfaitTouristique"/>
+        <Class abbreviatedIRI=":Service"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":GuideTouristique"/>
+        <Class abbreviatedIRI=":Agent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":GuideTouristique"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI=":managesTour"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Hebergement"/>
+        <Class abbreviatedIRI=":Service"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Hotel"/>
+        <Class abbreviatedIRI=":Hebergement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Loisir"/>
+        <Class abbreviatedIRI=":Activite"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":MaisonDHotes"/>
+        <Class abbreviatedIRI=":Hebergement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":OperateurTouristique"/>
+        <Class abbreviatedIRI=":Organisation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Organisation"/>
+        <Class abbreviatedIRI=":Agent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Pays"/>
+        <Class abbreviatedIRI=":Destination"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Region"/>
+        <Class abbreviatedIRI=":Destination"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Service"/>
+        <Class abbreviatedIRI=":Tourisme"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Touriste"/>
+        <Class abbreviatedIRI=":Agent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Touriste"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI=":participatesInActivity"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Touriste"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI=":hasAccommodation"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Transport"/>
+        <Class abbreviatedIRI=":Service"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":TransportAerien"/>
+        <Class abbreviatedIRI=":Transport"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":TransportFerroviaire"/>
+        <Class abbreviatedIRI=":Transport"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":TransportRoutier"/>
+        <Class abbreviatedIRI=":Transport"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Ville"/>
+        <Class abbreviatedIRI=":Destination"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class abbreviatedIRI=":Activite"/>
+        <Class abbreviatedIRI=":ForfaitTouristique"/>
+        <Class abbreviatedIRI=":Hebergement"/>
+        <Class abbreviatedIRI=":Transport"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI=":AgenceDeVoyage"/>
+        <Class abbreviatedIRI=":ChaineHoteliere"/>
+        <Class abbreviatedIRI=":OperateurTouristique"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI=":AubergeDeJeunesse"/>
+        <Class abbreviatedIRI=":Hotel"/>
+        <Class abbreviatedIRI=":MaisonDHotes"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI=":Aventure"/>
+        <Class abbreviatedIRI=":Culturelle"/>
+        <Class abbreviatedIRI=":Loisir"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI=":Conference"/>
+        <Class abbreviatedIRI=":Exposition"/>
+        <Class abbreviatedIRI=":Festival"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI=":GuideTouristique"/>
+        <Class abbreviatedIRI=":Touriste"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI=":Pays"/>
+        <Class abbreviatedIRI=":Region"/>
+        <Class abbreviatedIRI=":Ville"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class abbreviatedIRI=":ChaineHoteliere"/>
+        <NamedIndividual abbreviatedIRI=":AccorHotels"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI=":ChaineHoteliere"/>
+        <NamedIndividual abbreviatedIRI=":Viator"/>
+    </ClassAssertion>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI=":hasAccommodation"/>
+        <ObjectProperty abbreviatedIRI=":isAccommodationOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI=":hasParticipant"/>
+        <ObjectProperty abbreviatedIRI=":participatesInActivity"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI=":isManagedBy"/>
+        <ObjectProperty abbreviatedIRI=":managesTour"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI=":isOfferedBy"/>
+        <ObjectProperty abbreviatedIRI=":offersService"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI=":isOrganizedBy"/>
+        <ObjectProperty abbreviatedIRI=":organizesEvent"/>
+    </InverseObjectProperties>
+    <TransitiveObjectProperty>
+        <ObjectProperty abbreviatedIRI=":locatedIn"/>
+    </TransitiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":hasAccommodation"/>
+        <Class abbreviatedIRI=":Touriste"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":hasActivity"/>
+        <Class abbreviatedIRI=":Service"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":hasDestination"/>
+        <Class abbreviatedIRI=":Service"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":hasTransportation"/>
+        <Class abbreviatedIRI=":Service"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":locatedIn"/>
+        <Class abbreviatedIRI=":Destination"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":managesTour"/>
+        <Class abbreviatedIRI=":GuideTouristique"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":offersService"/>
+        <Class abbreviatedIRI=":OperateurTouristique"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":organizesEvent"/>
+        <Class abbreviatedIRI=":Organisation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":participatesInActivity"/>
+        <Class abbreviatedIRI=":Touriste"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":hasAccommodation"/>
+        <Class abbreviatedIRI=":Hebergement"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":hasActivity"/>
+        <Class abbreviatedIRI=":Activite"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":hasDestination"/>
+        <Class abbreviatedIRI=":Destination"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":hasTransportation"/>
+        <Class abbreviatedIRI=":Transport"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":locatedIn"/>
+        <Class abbreviatedIRI=":Destination"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":managesTour"/>
+        <Class abbreviatedIRI=":Activite"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":offersService"/>
+        <Class abbreviatedIRI=":Service"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":organizesEvent"/>
+        <Class abbreviatedIRI=":Evenement"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":participatesInActivity"/>
+        <Class abbreviatedIRI=":Activite"/>
+    </ObjectPropertyRange>
+    <FunctionalDataProperty>
+        <DataProperty abbreviatedIRI=":email"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty abbreviatedIRI=":hasName"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty abbreviatedIRI=":hasPrice"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty abbreviatedIRI=":hasRating"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty abbreviatedIRI=":telephone"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty abbreviatedIRI=":website"/>
+    </FunctionalDataProperty>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":capacity"/>
+        <Class abbreviatedIRI=":Evenement"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":email"/>
+        <Class abbreviatedIRI=":Agent"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":endDate"/>
+        <Class abbreviatedIRI=":Evenement"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":hasDescription"/>
+        <Class abbreviatedIRI=":Tourisme"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":hasName"/>
+        <Class abbreviatedIRI=":Tourisme"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":hasPrice"/>
+        <Class abbreviatedIRI=":Service"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":hasRating"/>
+        <Class abbreviatedIRI=":Service"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":startDate"/>
+        <Class abbreviatedIRI=":Evenement"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":telephone"/>
+        <Class abbreviatedIRI=":Agent"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":website"/>
+        <Class abbreviatedIRI=":Agent"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI=":capacity"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI=":email"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI=":endDate"/>
+        <Datatype abbreviatedIRI="xsd:date"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI=":hasDescription"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI=":hasName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI=":hasPrice"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI=":hasRating"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI=":startDate"/>
+        <Datatype abbreviatedIRI="xsd:date"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI=":telephone"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI=":website"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <HasKey>
+        <Class abbreviatedIRI=":Agent"/>
+        <DataProperty IRI="http://xmlns.com/foaf/0.1/name"/>
+    </HasKey>
+    <HasKey>
+        <Class abbreviatedIRI=":Destination"/>
+        <DataProperty abbreviatedIRI=":hasName"/>
+    </HasKey>
+    <HasKey>
+        <Class abbreviatedIRI=":Service"/>
+        <DataProperty abbreviatedIRI=":hasName"/>
+    </HasKey>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>:Activite</AbbreviatedIRI>
+        <Literal xml:lang="fr">Activité proposée aux touristes.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>:Activite</AbbreviatedIRI>
+        <Literal xml:lang="fr">Activité</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>:Agent</AbbreviatedIRI>
+        <Literal xml:lang="fr">Acteur participant ou organisant le tourisme.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>:Agent</AbbreviatedIRI>
+        <Literal xml:lang="fr">Agent</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>:Destination</AbbreviatedIRI>
+        <Literal xml:lang="fr">Lieu visité ou desservi par un service touristique.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>:Destination</AbbreviatedIRI>
+        <Literal xml:lang="fr">Destination</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>:Evenement</AbbreviatedIRI>
+        <Literal xml:lang="fr">Événement organisé comme service touristique.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>:Evenement</AbbreviatedIRI>
+        <Literal xml:lang="fr">Événement</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>:ForfaitTouristique</AbbreviatedIRI>
+        <Literal xml:lang="fr">Ensemble de services vendus comme un seul produit.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>:ForfaitTouristique</AbbreviatedIRI>
+        <Literal xml:lang="fr">Forfait touristique</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>:GuideTouristique</AbbreviatedIRI>
+        <Literal xml:lang="fr">Personne guidant les touristes.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>:GuideTouristique</AbbreviatedIRI>
+        <Literal xml:lang="fr">Guide touristique</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>:Hebergement</AbbreviatedIRI>
+        <Literal xml:lang="fr">Logement proposé aux touristes.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>:Hebergement</AbbreviatedIRI>
+        <Literal xml:lang="fr">Hébergement</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>:Organisation</AbbreviatedIRI>
+        <Literal xml:lang="fr">Entité fournissant des services touristiques.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>:Organisation</AbbreviatedIRI>
+        <Literal xml:lang="fr">Organisation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>:Pays</AbbreviatedIRI>
+        <Literal xml:lang="fr">Entité géopolitique de plus grande échelle.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>:Pays</AbbreviatedIRI>
+        <Literal xml:lang="fr">Pays</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>:Region</AbbreviatedIRI>
+        <Literal xml:lang="fr">Division administrative d&apos;un pays.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>:Region</AbbreviatedIRI>
+        <Literal xml:lang="fr">Région</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>:Service</AbbreviatedIRI>
+        <Literal xml:lang="fr">Tout service touristique (activité, hébergement, transport).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>:Service</AbbreviatedIRI>
+        <Literal xml:lang="fr">Service</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>:Tourisme</AbbreviatedIRI>
+        <Literal xml:lang="fr">Domaine général du tourisme.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>:Tourisme</AbbreviatedIRI>
+        <Literal xml:lang="fr">Tourisme</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>:Touriste</AbbreviatedIRI>
+        <Literal xml:lang="fr">Personne voyageant pour le tourisme.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>:Touriste</AbbreviatedIRI>
+        <Literal xml:lang="fr">Touriste</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>:Transport</AbbreviatedIRI>
+        <Literal xml:lang="fr">Service de déplacement pour touristes.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>:Transport</AbbreviatedIRI>
+        <Literal xml:lang="fr">Transport</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>:Ville</AbbreviatedIRI>
+        <Literal xml:lang="fr">Zone urbaine desservie par les services touristiques.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>:Ville</AbbreviatedIRI>
+        <Literal xml:lang="fr">Ville</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

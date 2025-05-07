@@ -1,0 +1,285 @@
+@prefix : <http://example.org/tourisme#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://example.org/tourisme#> .
+
+[ rdf:type owl:Ontology
+ ] .
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://example.org/tourisme#hasAccommodation
+:hasAccommodation rdf:type owl:ObjectProperty .
+
+
+###  http://example.org/tourisme#hasActivity
+:hasActivity rdf:type owl:ObjectProperty .
+
+
+###  http://example.org/tourisme#hasDestination
+:hasDestination rdf:type owl:ObjectProperty .
+
+
+###  http://example.org/tourisme#hasTransportation
+:hasTransportation rdf:type owl:ObjectProperty .
+
+
+###  http://example.org/tourisme#locatedIn
+:locatedIn rdf:type owl:ObjectProperty .
+
+
+###  http://example.org/tourisme#managesTour
+:managesTour rdf:type owl:ObjectProperty .
+
+
+###  http://example.org/tourisme#offersService
+:offersService rdf:type owl:ObjectProperty .
+
+
+###  http://example.org/tourisme#organizesEvent
+:organizesEvent rdf:type owl:ObjectProperty .
+
+
+###  http://example.org/tourisme#participatesInActivity
+:participatesInActivity rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://example.org/tourisme#capacity
+:capacity rdf:type owl:DatatypeProperty .
+
+
+###  http://example.org/tourisme#email
+:email rdf:type owl:DatatypeProperty .
+
+
+###  http://example.org/tourisme#endDate
+:endDate rdf:type owl:DatatypeProperty .
+
+
+###  http://example.org/tourisme#hasDescription
+:hasDescription rdf:type owl:DatatypeProperty .
+
+
+###  http://example.org/tourisme#hasName
+:hasName rdf:type owl:DatatypeProperty .
+
+
+###  http://example.org/tourisme#hasPrice
+:hasPrice rdf:type owl:DatatypeProperty .
+
+
+###  http://example.org/tourisme#hasRating
+:hasRating rdf:type owl:DatatypeProperty .
+
+
+###  http://example.org/tourisme#startDate
+:startDate rdf:type owl:DatatypeProperty .
+
+
+###  http://example.org/tourisme#telephone
+:telephone rdf:type owl:DatatypeProperty .
+
+
+###  http://example.org/tourisme#website
+:website rdf:type owl:DatatypeProperty .
+
+
+###  http://xmlns.com/foaf/0.1/name
+foaf:name rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://example.org/tourisme#Activite
+:Activite rdf:type owl:Class .
+
+
+###  http://example.org/tourisme#AgenceDeVoyage
+:AgenceDeVoyage rdf:type owl:Class .
+
+
+###  http://example.org/tourisme#GuideTouristique
+:GuideTouristique rdf:type owl:Class .
+
+
+###  http://example.org/tourisme#Hotel
+:Hotel rdf:type owl:Class .
+
+
+###  http://example.org/tourisme#MaisonDHotes
+:MaisonDHotes rdf:type owl:Class .
+
+
+###  http://example.org/tourisme#Pays
+:Pays rdf:type owl:Class .
+
+
+###  http://example.org/tourisme#Region
+:Region rdf:type owl:Class .
+
+
+###  http://example.org/tourisme#Touriste
+:Touriste rdf:type owl:Class .
+
+
+###  http://example.org/tourisme#Ville
+:Ville rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://example.org/tourisme#AccorHotels
+:AccorHotels rdf:type owl:NamedIndividual ;
+             :website "https://group.accor.com" ;
+             foaf:name "Accor Hotels" .
+
+
+###  http://example.org/tourisme#AixEnProvence
+:AixEnProvence rdf:type owl:NamedIndividual ,
+                        :Ville ;
+               :locatedIn :Provence ;
+               :hasName "Aix-en-Provence" .
+
+
+###  http://example.org/tourisme#Ali
+:Ali rdf:type owl:NamedIndividual ,
+              :Touriste ;
+     :hasAccommodation :HotelLouvre ;
+     :participatesInActivity :KayakSeine ,
+                             :LouvreVisit ;
+     :email "ali@example.com" ;
+     foaf:name "Ali Mellah" .
+
+
+###  http://example.org/tourisme#ExpediaFR
+:ExpediaFR rdf:type owl:NamedIndividual ,
+                    :AgenceDeVoyage ;
+           :email "support@expedia.fr" ;
+           :website "https://www.expedia.fr" ;
+           foaf:name "Expedia France" .
+
+
+###  http://example.org/tourisme#France
+:France rdf:type owl:NamedIndividual ,
+                 :Pays ;
+        :hasDescription "Pays d'Europe connu pour sa culture et sa gastronomie." ;
+        :hasName "France" .
+
+
+###  http://example.org/tourisme#HotelLouvre
+:HotelLouvre rdf:type owl:NamedIndividual ,
+                      :Hotel ;
+             :locatedIn :Paris ;
+             :hasName "Hôtel du Louvre" ;
+             :hasPrice 150 ;
+             :hasRating 4.6 .
+
+
+###  http://example.org/tourisme#KayakSeine
+:KayakSeine rdf:type owl:NamedIndividual ,
+                     :Activite ;
+            :locatedIn :Paris ;
+            :capacity 12 ;
+            :endDate "2025-06-10"^^xsd:date ;
+            :hasName "Kayak sur la Seine" ;
+            :startDate "2025-06-10"^^xsd:date .
+
+
+###  http://example.org/tourisme#LouvreVisit
+:LouvreVisit rdf:type owl:NamedIndividual ,
+                      :Activite ;
+             :locatedIn :Paris ;
+             :capacity 20 ;
+             :endDate "2025-06-01"^^xsd:date ;
+             :hasName "Visite guidée du Louvre" ;
+             :startDate "2025-06-01"^^xsd:date .
+
+
+###  http://example.org/tourisme#MaisonDuSud
+:MaisonDuSud rdf:type owl:NamedIndividual ,
+                      :MaisonDHotes ;
+             :locatedIn :Provence ;
+             :hasName "Maison du Sud" ;
+             :hasPrice 80 ;
+             :hasRating 4.8 .
+
+
+###  http://example.org/tourisme#Marie
+:Marie rdf:type owl:NamedIndividual ,
+                :Touriste ;
+       :hasAccommodation :MaisonDuSud ;
+       :participatesInActivity :WineTour ;
+       :email "marie@example.com" ;
+       foaf:name "Marie Curie" .
+
+
+###  http://example.org/tourisme#Paris
+:Paris rdf:type owl:NamedIndividual ,
+                :Ville ;
+       :locatedIn :ÎleDeFrance ;
+       :hasDescription "Capitale de la France, célèbre pour la tour Eiffel." ;
+       :hasName "Paris" .
+
+
+###  http://example.org/tourisme#PierreGuide
+:PierreGuide rdf:type owl:NamedIndividual ,
+                      :GuideTouristique ;
+             :managesTour :LouvreVisit ;
+             foaf:name "Pierre Dupont" .
+
+
+###  http://example.org/tourisme#Provence
+:Provence rdf:type owl:NamedIndividual ,
+                   :Region ;
+          :locatedIn :France ;
+          :hasName "Provence" .
+
+
+###  http://example.org/tourisme#Viator
+:Viator rdf:type owl:NamedIndividual ;
+        :email "contact@viator.com" ;
+        :telephone "+33123456789" ;
+        :website "https://www.viator.com" ;
+        foaf:name "Viator Travel" .
+
+
+###  http://example.org/tourisme#WineTour
+:WineTour rdf:type owl:NamedIndividual ,
+                   :Activite ;
+          :locatedIn :Provence ;
+          :capacity 15 ;
+          :endDate "2025-07-15"^^xsd:date ;
+          :hasName "Dégustation de vins en Provence" ;
+          :startDate "2025-07-15"^^xsd:date .
+
+
+###  http://example.org/tourisme#ÎleDeFrance
+:ÎleDeFrance rdf:type owl:NamedIndividual ,
+                      :Region ;
+             :locatedIn :France ;
+             :hasName "Île-de-France" .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
