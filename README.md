@@ -64,18 +64,18 @@ Ce projet modélise les concepts clés du tourisme (destinations, activités, h�
    - Identification des concepts : destinations, activités, hébergements, transports, forfaits, événements, acteurs.
 
 2. **Modélisation OWL pui TTL**  
-   - Définition des classes et propriétés en TTL  
+   - Définition des classes et propriétés en TTL
 
-3. **Interrogation SPARQL**  
+3. **Formalisation**  
+   - Formalisation des sous-classes, disjonctions, restrictions (Transitive, Functional)  
+
+4. **Interrogation SPARQL**  
    - Conception de 4 requêtes :  
      - Activités (nom, localisation, capacité)  
      - Hébergements (nom, prix, localisation)  
      - Touristes et activités (e-mail, hébergement, liste d’activités)  
      - Guides et visites (qui gère quelle activité)  
    - Analyse et capture des résultats.
-
-4. **Formalisation**  
-   - Formalisation des sous-classes, disjonctions, restrictions (Transitive, Functional)  
 
 5. **Définition des règles SWRL**  
    - Règles d’inversions (`isAccommodationOf`, `hasParticipant`…)  
